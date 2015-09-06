@@ -13,7 +13,7 @@ public class Parser {
         for (int i=2; i < fileLines.length; i++) {
 
             String[] times = fileLines[i].split("\\s+");
-            jobs[i-2] = new Job(Integer.parseInt(times[0]), Integer.parseInt(times[1]));
+            jobs[i-2] = new Job(Integer.parseInt(times[0]), Integer.parseInt(times[1]), i-2);
 
         }
 
