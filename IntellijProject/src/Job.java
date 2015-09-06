@@ -1,5 +1,3 @@
-package com.groupC;
-
 public class Job {
     int start = 0;
     int end = 0;

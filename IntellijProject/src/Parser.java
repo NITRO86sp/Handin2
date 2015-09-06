@@ -1,5 +1,3 @@
-package com.groupC;
-
 public class Parser {
 
     public static Job[] Parse (String[] file) {
@@ -8,7 +6,7 @@ public class Parser {
         String[] fileLines = file;
 
         // the initial Job array is created
-        Job[] jobs = new Job[3];
+        Job[] jobs = new Job[Integer.parseInt(fileLines[0])];
 
         // creating the array of Job's
         // i=2 due to the fact that input file always contains "n line" + "empty line"
@@ -16,5 +14,6 @@ public class Parser {
 
         }
 
+        return jobs;
     }
 }
