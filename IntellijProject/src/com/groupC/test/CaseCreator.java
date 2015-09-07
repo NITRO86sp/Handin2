@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Created by radush on 9/7/15.
  */
-public class FileLoader {
+public class CaseCreator {
     private final String filesPrefix = "ip-";
     private final String inputSufix = ".in";
     private final String outputSufix = ".out";
@@ -18,13 +18,13 @@ public class FileLoader {
     private FileReader fileReader;
     private String lastInputFileName;
 
-    public FileLoader(Parser parser, FileReader fileReader, String lastInputFileName) {
+    public CaseCreator(Parser parser, FileReader fileReader, String lastInputFileName) {
         this.parser = parser;
         this.fileReader = fileReader;
         this.lastInputFileName = lastInputFileName;
     }
 
-    public FileLoader(Parser parser) {
+    public CaseCreator(Parser parser) {
         this.parser = parser;
     }
 

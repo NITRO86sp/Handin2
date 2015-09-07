@@ -22,7 +22,5 @@ public class IP {
          }
  }
 
-    public Output Calculate(){
-        return null;
-    };
+
 }
