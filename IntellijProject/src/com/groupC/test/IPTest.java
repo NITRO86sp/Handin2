@@ -40,15 +40,14 @@ public class IPTest {
         Job[] expectedOutput = caseCreator.ReadOutput();
         IntervalPartitioner intervalPartitioner = new IntervalPartitioner(input);
         long start = System.nanoTime();
-        intervalPartitioner.Calculate();
+        Output output = intervalPartitioner.Calculate();
         long elapsedTime = System.nanoTime() - start;
+        testResultBuilder.Append(new TestResult(output.getIterations(),testResultComparer.Compare(output.getResults(),expectedOutput),elapsedTime));
     }
 
     @Before
     public void setUp() throws Exception {
-
-
-
+        testResultBuilder = new TestResultBuilder();
     }
 
     @After

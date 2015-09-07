@@ -4,8 +4,17 @@ package com.groupC.src;
  * Created by radush on 9/7/15.
  */
 public class Output {
-    Job[] results;
-    int iterations;
+    private Job[] results;
+    private int iterations;
+
+    public Job[] getResults() {
+        return results;
+    }
+
+    public int getIterations() {
+        return iterations;
+    }
+
 
     public Output(Job[] results, int iterations) {
         this.results = results;
