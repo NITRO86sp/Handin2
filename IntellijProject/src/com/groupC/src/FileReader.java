@@ -3,8 +3,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-class FileReader {
-
+public class FileReader {
     public String[] ReadFile(String path) throws IOException {
         File file = new File(path);
         FileInputStream fis = new FileInputStream(file);
