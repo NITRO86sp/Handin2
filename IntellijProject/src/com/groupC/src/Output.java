@@ -11,4 +11,11 @@ public class Output {
         this.results = results;
         this.iterations = iterations;
     }
+
+    public Output(Job[] results) {
+        this.results = results;
+    }
+
+    public Output() {
+    }
 }

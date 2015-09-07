@@ -1,6 +1,8 @@
 package com.groupC.test;
 
+import com.groupC.src.IntervalPartitioner;
 import com.groupC.src.Job;
+import com.groupC.src.Output;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,6 +18,8 @@ public class IPTest {
 
     private String[] fileNames;
     private CaseCreator caseCreator;
+    private TestResultBuilder testResultBuilder;
+    private TestResultComparer testResultComparer;
 
     public IPTest(CaseCreator caseCreator) {
         this.caseCreator = caseCreator;
@@ -33,13 +37,18 @@ public class IPTest {
     @Test
     public void testCaseFileCalled1() throws IOException {
         Job[] input = caseCreator.ReadInput(fileNames[0]);
+        Job[] expectedOutput = caseCreator.ReadOutput();
+        IntervalPartitioner intervalPartitioner = new IntervalPartitioner(input);
+        long start = System.nanoTime();
+        intervalPartitioner.Calculate();
+        long elapsedTime = System.nanoTime() - start;
     }
 
     @Before
     public void setUp() throws Exception {
-        long start = System.nanoTime();
 
-        long elapsedTime = System.nanoTime() - start;
+
+
     }
 
     @After
