@@ -3,6 +3,7 @@ package com.groupC.test;
 import com.groupC.src.IntervalPartitioner;
 import com.groupC.src.Job;
 import com.groupC.src.Output;
+import com.groupC.src.Parser;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,8 +22,9 @@ public class IPTest {
     private TestResultBuilder testResultBuilder;
     private TestResultComparer testResultComparer;
 
-    public IPTest(CaseCreator caseCreator) {
-        this.caseCreator = caseCreator;
+    public IPTest() {
+        this.caseCreator = new CaseCreator(new Parser());
+        this.testResultComparer = new TestResultComparer();
         fileNames = new String[]{
                 "1",
                 "2",
@@ -42,7 +44,7 @@ public class IPTest {
         long start = System.nanoTime();
         Output output = intervalPartitioner.Calculate();
         long elapsedTime = System.nanoTime() - start;
-        testResultBuilder.Append(new TestResult(output.getIterations(),testResultComparer.Compare(output.getResults(),expectedOutput),elapsedTime));
+        testResultBuilder.Append(new TestResult(fileNames[0],output.getIterations(),testResultComparer.Compare(output.getResults(),expectedOutput),elapsedTime));
     }
 
     @Before
@@ -52,6 +54,6 @@ public class IPTest {
 
     @After
     public void tearDown() throws Exception {
-
+        testResultBuilder.Build();
     }
 }

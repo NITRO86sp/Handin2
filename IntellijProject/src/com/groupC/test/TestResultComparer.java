@@ -7,6 +7,6 @@ import com.groupC.src.Job;
  */
 public class TestResultComparer {
     public String Compare(Job[] input,Job[] output) {
-        return "";
+        return "It is correct";
     }
 }

@@ -4,6 +4,7 @@ import com.groupC.src.FileReader;
 import com.groupC.src.Job;
 import com.groupC.src.Parser;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -18,23 +19,20 @@ public class CaseCreator {
     private FileReader fileReader;
     private String lastInputFileName;
 
-    public CaseCreator(Parser parser, FileReader fileReader, String lastInputFileName) {
-        this.parser = parser;
-        this.fileReader = fileReader;
-        this.lastInputFileName = lastInputFileName;
-    }
 
     public CaseCreator(Parser parser) {
         this.parser = parser;
+        this.fileReader = new FileReader();
     }
 
     public Job[] ReadInput(String inputFileName) throws IOException {
         lastInputFileName = inputFileName;
-        return parser.ParseInput(fileReader.ReadFile(String.format("%s%s%s", filesPrefix, inputFileName, inputSufix)));
+        File folder = new File("./resources/ip-1.in");
+        return parser.ParseInput(fileReader.ReadFile(String.format("./resources/%s%s%s", filesPrefix, inputFileName, inputSufix)));
     }
 
     public Job[] ReadOutput() throws IOException {
-        return parser.ParseOutput(fileReader.ReadFile(String.format("%s%s%s", filesPrefix, lastInputFileName, outputSufix)));
+        return parser.ParseOutput(fileReader.ReadFile(String.format("./resources/%s%s%s", filesPrefix, lastInputFileName, outputSufix)));
     }
 
 }

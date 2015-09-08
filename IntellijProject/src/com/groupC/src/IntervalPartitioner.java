@@ -11,6 +11,6 @@ public class IntervalPartitioner {
     }
 
     public Output Calculate(){
-        return null;
+        return new Output(new Job[]{new Job(1,2,3),new Job(1,2,3),new Job(1,2,3)},1000);
     };
 }

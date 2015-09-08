@@ -1,0 +1,4 @@
+1
+ Iterations:	1000
+Time:	288364
+Errots:	It is correct

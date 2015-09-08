@@ -9,6 +9,14 @@ public class Job {
         end = e;
         id = i;
     }
+
+    public Job(int s, int e, int i, int r){
+        start = s;
+        end = e;
+        id = i;
+        resource = r;
+    }
+
     public void setResource(int r){
         resource = r;
     }
