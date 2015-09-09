@@ -9,7 +9,8 @@
 
 
 \title{Interval Partitioning Report}
-\author{Alice Cooper and Bob Marley}
+\author{Mark Dear, Stelios Papaoikonomou, Radek Niemczyk, Rasmus
+Løbner Christensen}
 
 \begin{document}
   \maketitle
@@ -18,19 +19,20 @@
 
   Our implementation produces the expected results on all
   input--output file pairs.
-  \sidenote{%
-  Complete the report by filling in your correct names,
-  filling in the parts marked $[\ldots]$,
-  and changing other parts wherever necessary.
-  For instance, if your implementation passes all tests, then write that.
-  Remove the sidenotes in your final hand-in.
-  }
+  
+  Our own JUnit test, which we are not including in the submission, showed that we have a total of N loops in the main
+  for loop (in the Algorithm implementation). This ensures us that the upper bound on the runtime, is bound by the Java Array sort.
+  Looking at the documentation for Comparable.compareTo() complexity, tells us that this runs in O(n log n), which means that our
+  implementation is running at a complexity of O(n log n).
 
   \section{Implementation details}
 
-  We use the library call \verb+java.util.Collections.shuffle+ on the
-  \verb+java.util.ArrayList+ of FancyObjects to avoid worst case behavior. We
-  then examine all pairs, and in case of a conflict, flip a coin for who gets
-  the room with the smallest index. After that step, our algorithm runs in
-  constant time by guessing the correct output.
+  Our implementation takes the input file and saves this in a String[] (fileParser.java). This String[] is then parsed
+  through our parser class (parser.java), which delegates the data into our dataobjects.
+  Our actual Algorithm implementation starts with sorting the list of Jobs[] (the intervals). Then it loops through each of these,
+  and checks for available resources (partitions). The partitions are stored in a Java priorityQueue, which always have the partition
+  with the earliest available endtime at the first element. This makes it possible for us to not check through the whole list of partitions,
+  for each n (input/interval). If the partition is occupied, it creates a new partition, and put this correctly into our Queue.
+  Lastly we print the output to the console.
+  
 \end{document}
