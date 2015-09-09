@@ -16,7 +16,9 @@ public class TestResultBuilder {
     }
 
     public void Append(TestResult result) {
+        writer.println("/////////////////////////////////////////////");
         writer.println(result.toString());
+        writer.println("/////////////////////////////////////////////");
     }
 
     public void Build(){
