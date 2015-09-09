@@ -18,6 +18,6 @@ public class TestResult {
 
     @Override
     public String toString(){
-        return String.format("%s\n Iterations:\t%s\nTime:\t%s\nErrots:\t%s",caseName,Iterations,TimePassed,errors);
+        return String.format("%s\nIterations:\t%s\nTime:\t%s\nErrors:\t%s\n",caseName,Iterations,TimePassed,errors);
     }
 }

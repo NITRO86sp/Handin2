@@ -2,6 +2,7 @@ package com.groupC.test;
 
 import com.groupC.src.FileReader;
 import com.groupC.src.Job;
+import com.groupC.src.Output;
 import com.groupC.src.Parser;
 
 import java.io.File;
@@ -31,7 +32,7 @@ public class CaseCreator {
         return parser.ParseInput(fileReader.ReadFile(String.format("./resources/%s%s%s", filesPrefix, inputFileName, inputSufix)));
     }
 
-    public Job[] ReadOutput() throws IOException {
+    public Output ReadOutput() throws IOException {
         return parser.ParseOutput(fileReader.ReadFile(String.format("./resources/%s%s%s", filesPrefix, lastInputFileName, outputSufix)));
     }
 

@@ -9,7 +9,6 @@ public class ResourceTimeComparator implements Comparator<Resource> {
 
     @Override
     public int compare(Resource o1, Resource o2) {
-
         return o1.getEnd() - o2.getEnd();
     }
 }

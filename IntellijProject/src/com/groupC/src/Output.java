@@ -16,6 +16,9 @@ public class Output {
         return iterations;
     }
 
+    public void setResources(int resources) {
+        this.resources = resources;
+    }
 
     public Output(Job[] results, int iterations, int resources) {
         this.results = results;
@@ -32,5 +35,9 @@ public class Output {
 
     public int getResources() {
         return resources;
+    }
+
+    public void setResults(Job[] results) {
+        this.results = results;
     }
 }

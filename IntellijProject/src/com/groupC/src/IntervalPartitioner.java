@@ -13,7 +13,6 @@ public class IntervalPartitioner {
 
     public IntervalPartitioner(Job[] input) {
         this.input = input;
-
     }
 
     public Output Calculate() {
