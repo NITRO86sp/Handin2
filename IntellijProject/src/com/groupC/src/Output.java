@@ -6,6 +6,7 @@ package com.groupC.src;
 public class Output {
     private Job[] results;
     private int iterations;
+    private int resources;
 
     public Job[] getResults() {
         return results;
@@ -16,9 +17,10 @@ public class Output {
     }
 
 
-    public Output(Job[] results, int iterations) {
+    public Output(Job[] results, int iterations, int resources) {
         this.results = results;
         this.iterations = iterations;
+        this.resources = resources;
     }
 
     public Output(Job[] results) {
@@ -26,5 +28,9 @@ public class Output {
     }
 
     public Output() {
+    }
+
+    public int getResources() {
+        return resources;
     }
 }
