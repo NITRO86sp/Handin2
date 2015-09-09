@@ -29,4 +29,8 @@ public class Output {
 
     public Output() {
     }
+
+    public int getResources() {
+        return resources;
+    }
 }
