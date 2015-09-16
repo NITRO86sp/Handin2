@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -9,9 +8,6 @@ import java.util.List;
  * Created by B006572 on 11-09-2015.
  */
 public class Parser {
-
-    // TODO - Is this in O(n log n) time?
-    // TODO - According to the book - it should be.
 
     // constructs Px and Py
     // returns a List with two List<Point>: Px and Py
